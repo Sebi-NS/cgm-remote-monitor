@@ -370,6 +370,7 @@
           <span class="translate">COB</span>
           <input type="number" step="any" min="0" id="cob" placeholder="Amount in grams" class="titletranslate" pattern="[0-9.,]*" />
       </label>
+      <input type="hidden" id="cobValue" name="cobValue">
          <label id="remoteAbsorptionLabel" for="remoteAbsorption" class="left-column short-label">
              <span class="translate">Absorption</span>
              <input type="number" step="any" min="0" id="remoteAbsorption" placeholder="Time in hours" class="titletranslate" pattern="[0-9.,]*" />
@@ -382,6 +383,8 @@
              <span class="translate">OTP</span>
              <input type="text" id="otp" placeholder="password" class="titletranslate" />
          </label>
+
+          <!-- Add fieldset for parameters here -->
 
         <fieldset id="nutrition" >
           <label id="carbsGivenLabel" for="carbsGiven" class="left-column short-label">
