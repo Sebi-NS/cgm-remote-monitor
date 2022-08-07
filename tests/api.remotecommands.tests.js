@@ -40,7 +40,7 @@ describe('Remote Commands API', function ( ) {
     .post('/api/remotecommands/')
     .set('api-secret', known || '')
     .send({
-      type: "bolus",
+      eventType: "bolus",
       otp: 12345,
       sendNotification: false,
       status: {
@@ -57,7 +57,7 @@ describe('Remote Commands API', function ( ) {
 
     postResponse.headers["content-type"].should.match(/json/)
     postResponse.status.should.equal(200)
-    postResponse.body[0].type.should.equal("bolus")
+    postResponse.body[0].eventType.should.equal("bolus")
     postResponse.body[0].otp.should.equal(12345)
     postResponse.body[0].sendNotification.should.equal(false)
     postResponse.body[0].status.state.should.equal("Pending")
@@ -83,7 +83,7 @@ describe('Remote Commands API', function ( ) {
     getResponse.headers["content-type"].should.match(/json/)
     getResponse.status.should.equal(200)
     getResponse.body.length.should.equal(1)
-    getResponse.body[0].type.should.equal("bolus")
+    getResponse.body[0].eventType.should.equal("bolus")
     getResponse.body[0].otp.should.equal(12345)
     getResponse.body[0].sendNotification.should.equal(false)
     getResponse.body[0].status.state.should.equal("Pending")
@@ -101,7 +101,7 @@ describe('Remote Commands API', function ( ) {
     .send({
       _id:  idFromPost, //Use same ID to perform an update.
       created_at: insertDateStringFromPost,
-      type: "bolus",
+      eventType: "bolus",
       otp: 12345,
       sendNotification: false,
       status: {
@@ -131,7 +131,7 @@ describe('Remote Commands API', function ( ) {
     get2Response.headers["content-type"].should.match(/json/)
     get2Response.status.should.equal(200)
     get2Response.body.length.should.equal(1)
-    get2Response.body[0].type.should.equal("bolus")
+    get2Response.body[0].eventType.should.equal("bolus")
     get2Response.body[0].otp.should.equal(12345)
     get2Response.body[0].sendNotification.should.equal(false)
     get2Response.body[0].status.state.should.equal("Success")
