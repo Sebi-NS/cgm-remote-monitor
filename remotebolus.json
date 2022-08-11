@@ -1,5 +1,5 @@
 {
-    "version": "2Point0",
+    "version": "2.0",
     "type": "bolus",
     "otp": 12345,
     "sendNotification": true,
