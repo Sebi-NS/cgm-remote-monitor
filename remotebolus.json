@@ -1,11 +1,12 @@
 {
     "version": "2.0",
-    "type": "bolus",
     "otp": 12345,
     "sendNotification": true,
     "eventType": "bolus",
     "status": {
         "state": "Pending",
         "message": "Remote bolus is currently Pending."
-    }
+    },
+    "units": 2.0,
+    "duration": 3.0
 }
